@@ -1,7 +1,7 @@
 "use client"
 import { GoogleGenerativeAI } from "@google/generative-ai"
-  const genAI = new GoogleGenerativeAI("AIzaSyCbG9s4YqzQ_sAd2G5ltHIy_J_aRBb2YQo")
-
+  const genAI = new GoogleGenerativeAI("YOUR_API_KEY")
+ 
 export async function fetchGeminiResponse(message: string): Promise<string> {
 const model = genAI.getGenerativeModel({ model: "models/gemini-1.5-flash-latest" })
   const result = await model.generateContent(message)

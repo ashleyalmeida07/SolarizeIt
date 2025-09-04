@@ -538,9 +538,16 @@ def get_subsidy_info(state):
     except Exception as e:
         return jsonify({'error': f'Failed to get subsidy info: {str(e)}'}), 500
 
-from flask_cors import CORS
 app = Flask(__name__)
-CORS(app,origins=["https://solarizeit.netlify.app"])
+
+# Enable CORS for all routes, allowing POST, OPTIONS, and all headers
+CORS(
+    app,
+    resources={r"/*": {"origins": "https://solarizeit.netlify.app"}},
+    supports_credentials=True,
+    allow_headers="*",
+    methods=["GET", "POST", "OPTIONS"]
+)
 
 PORT = int(os.environ.get("PORT", 5000))
 

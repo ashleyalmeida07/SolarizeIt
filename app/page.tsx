@@ -154,28 +154,63 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section className="py-16 bg-muted/50">
-        <div className="max-w-6xl mx-auto px-4">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold text-gray-900 mb-4">Trusted by Leading Solar Partners</h2>
-            <p className="text-gray-600">We work with India's top solar companies to bring you the best deals</p>
-          </div>
+<section className="py-16 bg-muted/50">
+  <div className="max-w-6xl mx-auto px-6">
+    <div className="text-center mb-12">
+      <h2 className="text-3xl font-bold text-gray-900 mb-4">
+        Why Choose Solarizeit
+      </h2>
+      <p className="text-gray-600 max-w-2xl mx-auto">
+        We are committed to delivering reliable, affordable, and sustainable
+        solar energy solutions tailored to your needs.
+      </p>
+    </div>
 
-          <div className="grid grid-cols-2 md:grid-cols-5 gap-8 items-center">
-            {partners.map((partner, index) => (
-              <div
-                key={index}
-                className="bg-card p-6 rounded-lg shadow-sm hover:shadow-md transition-shadow text-center"
-              >
-                <div className="w-12 h-12 bg-emerald-100 rounded-full mx-auto mb-3 flex items-center justify-center">
-                  <Sun className="h-6 w-6 text-emerald-600" />
-                </div>
-                <p className="font-medium text-gray-900 text-sm">{partner}</p>
-              </div>
-            ))}
-          </div>
+    <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8">
+      <div className="bg-card p-6 rounded-xl shadow-sm hover:shadow-md transition text-center">
+        <div className="w-12 h-12 mx-auto mb-4 flex items-center justify-center rounded-full bg-emerald-100">
+          ⚡
         </div>
-      </section>
+        <h3 className="font-semibold text-gray-900 mb-2">Reliable Power</h3>
+        <p className="text-sm text-gray-600">
+          Consistent energy supply with top-quality solar technology.
+        </p>
+      </div>
+
+      <div className="bg-card p-6 rounded-xl shadow-sm hover:shadow-md transition text-center">
+        <div className="w-12 h-12 mx-auto mb-4 flex items-center justify-center rounded-full bg-emerald-100">
+          💰
+        </div>
+        <h3 className="font-semibold text-gray-900 mb-2">Cost Savings</h3>
+        <p className="text-sm text-gray-600">
+          Reduce electricity bills and enjoy long-term savings.
+        </p>
+      </div>
+
+      <div className="bg-card p-6 rounded-xl shadow-sm hover:shadow-md transition text-center">
+        <div className="w-12 h-12 mx-auto mb-4 flex items-center justify-center rounded-full bg-emerald-100">
+          🌍
+        </div>
+        <h3 className="font-semibold text-gray-900 mb-2">Eco-Friendly</h3>
+        <p className="text-sm text-gray-600">
+          Contribute to a cleaner, greener environment with solar energy.
+        </p>
+      </div>
+
+      <div className="bg-card p-6 rounded-xl shadow-sm hover:shadow-md transition text-center">
+        <div className="w-12 h-12 mx-auto mb-4 flex items-center justify-center rounded-full bg-emerald-100">
+          🛠
+        </div>
+        <h3 className="font-semibold text-gray-900 mb-2">Expert Support</h3>
+        <p className="text-sm text-gray-600">
+          End-to-end assistance from planning to installation and beyond.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+   
 
       <section className="py-20 bg-gradient-to-r from-emerald-600 to-sky-600">
         <div className="max-w-4xl mx-auto text-center px-4">

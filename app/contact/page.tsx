@@ -281,16 +281,7 @@ export default function ContactPage() {
               </CardContent>
             </Card>
 
-            <Card className="shadow-xl border-0 bg-gradient-to-br from-emerald-500 to-sky-600 text-white dark:from-emerald-600 dark:to-sky-700">
-              <CardContent className="p-6 text-center">
-                <h3 className="text-xl font-bold mb-2">Need Immediate Help?</h3>
-                <p className="mb-4 text-emerald-100">Our solar experts are available 24/7 to answer your questions</p>
-                <Button className="bg-white text-emerald-600 hover:bg-gray-100">
-                  <Phone className="mr-2 h-4 w-4" />
-                  Call Now
-                </Button>
-              </CardContent>
-            </Card>
+           
           </div>
         </div>
       </div>

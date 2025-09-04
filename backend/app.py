@@ -9,8 +9,7 @@ import math
 from dotenv import load_dotenv
 from openai import OpenAI
 
-app = Flask(__name__)
-CORS(app)
+
 
 # Load environment variables
 load_dotenv()

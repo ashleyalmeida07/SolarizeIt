@@ -14,7 +14,7 @@ import dynamic from "next/dynamic"
 import { MapSearch } from "@/components/map-search"
 
 // API configuration - using environment variable
-const API_BASE_URL = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:5000/api'
+const API_BASE_URL = process.env.NEXT_PUBLIC_API_URL || 'https://solarizeit-9a3a.onrender.com'
 
 const InteractiveMap = dynamic(() => import("@/components/interactive-map"), {
   ssr: false,

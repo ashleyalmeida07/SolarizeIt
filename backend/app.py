@@ -540,7 +540,7 @@ def get_subsidy_info(state):
 
 from flask_cors import CORS
 app = Flask(__name__)
-CORS(app)
+CORS(app,origins=["https://solarizeit.netlify.app"])
 
 PORT = int(os.environ.get("PORT", 5000))
 

@@ -542,9 +542,10 @@ app = Flask(__name__)
 # Enable CORS for all routes, allowing POST, OPTIONS, and all headers
 CORS(
     app,
-    resources={r"/*": {"origins": "https://solarizeit.netlify.app"}},
+    resources={r"/*": {"origins": ["https://solarizeit.netlify.app"]}},
     supports_credentials=True,
-    allow_headers="*",
+    expose_headers=["Content-Type", "Authorization"],
+    allow_headers=["Content-Type", "Authorization"],
     methods=["GET", "POST", "OPTIONS"]
 )
 

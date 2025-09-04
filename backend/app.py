@@ -9,6 +9,7 @@ import math
 from dotenv import load_dotenv
 from openai import OpenAI
 
+app = Flask(__name__)
 
 
 # Load environment variables
@@ -537,7 +538,6 @@ def get_subsidy_info(state):
     except Exception as e:
         return jsonify({'error': f'Failed to get subsidy info: {str(e)}'}), 500
 
-app = Flask(__name__)
 
 # CORS configuration - MUST be after app creation but before routes
 CORS(

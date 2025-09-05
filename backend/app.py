@@ -12,11 +12,10 @@ from openai import OpenAI
 app = Flask(__name__)
 CORS(
     app,
-    resources={r"/*": {"origins": ["https://solarizeit.netlify.app", "http://localhost:3000"]}},
-    supports_credentials=True,
-    methods=["GET", "POST", "OPTIONS", "PUT", "DELETE"],
-    allow_headers=["Content-Type", "Authorization", "Access-Control-Allow-Credentials"],
-    expose_headers=["Content-Type", "Authorization"]
+    origins=["https://solarizeit.netlify.app", "http://localhost:3000"],
+    methods=["GET", "POST", "OPTIONS"],
+    allow_headers=["Content-Type", "Authorization"],
+    supports_credentials=False  # Set to False to avoid complications
 )
 
 # Load environment variables
@@ -305,8 +304,17 @@ def analyze_with_openai(location_data, energy_data, solar_metrics, weather_data)
         # If AI completely fails, fail the analysis - no fallback data
         raise Exception("AI analysis service unavailable. Please try again in a few moments.")
 
-@app.route('/api/analyze', methods=['POST'])
+
+@app.route('/analyze', methods=['POST', 'OPTIONS'])
+@app.route('/api/analyze', methods=['POST', 'OPTIONS'])
 def analyze_solar():
+    if request.method == 'OPTIONS':
+        response = jsonify({'status': 'ok'})
+        response.headers.add('Access-Control-Allow-Origin', 'https://solarizeit.netlify.app')
+        response.headers.add('Access-Control-Allow-Headers', 'Content-Type,Authorization')
+        response.headers.add('Access-Control-Allow-Methods', 'POST,OPTIONS')
+        return response
+    
     try:
         data = request.json
         

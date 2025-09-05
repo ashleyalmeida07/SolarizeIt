@@ -10,7 +10,14 @@ from dotenv import load_dotenv
 from openai import OpenAI
 
 app = Flask(__name__)
-
+CORS(
+    app,
+    resources={r"/*": {"origins": ["https://solarizeit.netlify.app", "http://localhost:3000"]}},
+    supports_credentials=True,
+    methods=["GET", "POST", "OPTIONS", "PUT", "DELETE"],
+    allow_headers=["Content-Type", "Authorization", "Access-Control-Allow-Credentials"],
+    expose_headers=["Content-Type", "Authorization"]
+)
 
 # Load environment variables
 load_dotenv()
@@ -538,16 +545,6 @@ def get_subsidy_info(state):
     except Exception as e:
         return jsonify({'error': f'Failed to get subsidy info: {str(e)}'}), 500
 
-
-# CORS configuration - MUST be after app creation but before routes
-CORS(
-    app,
-    resources={r"/*": {"origins": ["https://solarizeit.netlify.app", "http://localhost:3000"]}},
-    supports_credentials=True,
-    methods=["GET", "POST", "OPTIONS", "PUT", "DELETE"],
-    allow_headers=["Content-Type", "Authorization", "Access-Control-Allow-Credentials"],
-    expose_headers=["Content-Type", "Authorization"]
-)
 
 PORT = int(os.environ.get("PORT", 5000))
 
